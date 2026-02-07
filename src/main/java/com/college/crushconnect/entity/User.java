@@ -1,10 +1,13 @@
 package com.college.crushconnect.entity;
 
 import jakarta.persistence.*;
+import lombok.Builder;
+
 import java.time.Instant;
 
 @Entity
 @Table(name = "users")
+@Builder
 public class User {
 
     @Id

@@ -8,4 +8,5 @@ import java.util.Optional;
 public interface OtpSessionRepository extends JpaRepository<OtpSession, Long> {
 
     Optional<OtpSession> findTopByEmailAndIsUsedFalseOrderByCreatedAtDesc(String email);
+    Optional<OtpSession> findByEmail(String email);
 }
