@@ -1,0 +1,36 @@
+databaseChangeLog:
+  - changeSet:
+      id: 004-create-matches
+      author: crush-app
+      changes:
+        - createTable:
+            tableName: matches
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+
+              - column:
+                  name: user1_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+
+              - column:
+                  name: user2_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+
+              - column:
+                  name: matched_at
+                  type: TIMESTAMP
+                  defaultValueComputed: CURRENT_TIMESTAMP
+
+        - addUniqueConstraint:
+            tableName: matches
+            columnNames: user1_id, user2_id
+            constraintName: uq_match_pair

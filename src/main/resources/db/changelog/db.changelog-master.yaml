@@ -1,0 +1,9 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/001-create-users.yaml
+  - include:
+      file: db/changelog/002-create-otp-sessions.yaml
+  - include:
+      file: db/changelog/003-create-crushes.yaml
+  - include:
+      file: db/changelog/004-create-matches.yaml
