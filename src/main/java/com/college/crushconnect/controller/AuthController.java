@@ -1,9 +1,11 @@
 package com.college.crushconnect.controller;
 
+import com.college.crushconnect.dto.RequestOtpRequest;
 import com.college.crushconnect.dto.VerifyOtpRequest;
 import com.college.crushconnect.dto.VerifyOtpResponse;
 import com.college.crushconnect.service.OtpService;
 import com.college.crushconnect.service.OtpVerificationService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -20,11 +22,9 @@ public class AuthController {
 
     @PostMapping("/request-otp")
     public ResponseEntity<Map<String, String>> requestOtp(
-            @RequestBody Map<String, String> request) {
+            @RequestBody @Valid RequestOtpRequest request) {
 
-        String email = request.get("email");
-
-        otpService.sendOtp(email);
+        otpService.sendOtp(request.getEmail());
 
         // Generic response to avoid email enumeration
         return ResponseEntity.ok(
