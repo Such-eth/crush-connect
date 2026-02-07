@@ -63,11 +63,11 @@ public class OtpSession {
         this.expiresAt = expiresAt;
     }
 
-    public Boolean getUsed() {
+    public Boolean getIsUsed() {
         return isUsed;
     }
 
-    public void setUsed(Boolean used) {
+    public void setIsUsed(Boolean used) {
         isUsed = used;
     }
 
