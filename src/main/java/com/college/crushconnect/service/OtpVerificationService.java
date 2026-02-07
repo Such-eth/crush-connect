@@ -6,11 +6,13 @@ import com.college.crushconnect.exception.*;
 import com.college.crushconnect.repository.OtpSessionRepository;
 import com.college.crushconnect.repository.UserRepository;
 import com.college.crushconnect.util.HashUtil;
+import com.college.crushconnect.util.JwtUtil;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.Instant;
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -18,6 +20,12 @@ public class OtpVerificationService {
 
     private final OtpSessionRepository otpSessionRepository;
     private final UserRepository userRepository;
+
+    private final JwtUtil jwtUtil;
+
+    public List<User> getAllUsers() {
+        return userRepository.findAll();
+    }
 
     @Transactional
     public String verifyOtp(String email, String otp, String name) {
@@ -56,7 +64,8 @@ public class OtpVerificationService {
         userRepository.save(user);
 
         // JWT generation will be implemented in STEP 3
-        return "JWT_TOKEN_PLACEHOLDER";
+        String token = jwtUtil.generateToken(user.getId(), user.getEmail());
+        return token;
     }
 }
 

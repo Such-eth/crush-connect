@@ -27,3 +27,7 @@ spring:
           auth: true
           starttls:
             enable: true
+
+jwt:
+  secret: QnJmKX4H0sM9R+9ZkA2P5rXW8m9nU3Hc0E4T7LJbM2Y=
+  expiration-hours: 24
