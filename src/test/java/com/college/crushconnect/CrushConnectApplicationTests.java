@@ -1,4 +1,4 @@
-package com.college.crush_connect;
+package com.college.crushconnect;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
