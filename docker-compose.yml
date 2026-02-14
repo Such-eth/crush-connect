@@ -1,0 +1,36 @@
+version: "3.9"
+
+services:
+
+  mysql:
+    image: mysql
+    container_name: crush-mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: college_crush
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+  app:
+    build: .
+    container_name: crush-app
+    depends_on:
+      - mysql
+    ports:
+      - "8080:8080"
+
+    environment:
+      DB_URL: jdbc:mysql://mysql:3306/college_crush
+      DB_USER: root
+      DB_PASS: root
+
+      MAIL_USER: ksucheth03@gmail.com
+      MAIL_PASS: vlgxvuvfjhoowkyc
+
+      JWT_SECRET: QnJmKX4H0sM9R+9ZkA2P5rXW8m9nU3Hc0E4T7LJbM2Y=
+
+volumes:
+  mysql-data:
