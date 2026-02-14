@@ -7,3 +7,5 @@ databaseChangeLog:
       file: db/changelog/003-create-crushes.yaml
   - include:
       file: db/changelog/004-create-matches.yaml
+  - include:
+      file: db/changelog/005-create-app-config.yaml
