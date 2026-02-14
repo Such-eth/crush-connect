@@ -12,4 +12,9 @@ public interface CrushRepository extends JpaRepository<Crush, Long> {
     Optional<Crush> findByFromUserId(Long fromUserId);
 
     Optional<Crush> findByToEmailHash(String toEmailHash);
+
+    Optional<Crush> findByFromUserIdAndToEmailHash(
+            Long fromUserId,
+            String toEmailHash
+    );
 }
