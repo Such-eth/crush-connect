@@ -20,7 +20,6 @@ public class OtpVerificationService {
 
     private final OtpSessionRepository otpSessionRepository;
     private final UserRepository userRepository;
-
     private final JwtUtil jwtUtil;
 
     public List<User> getAllUsers() {
