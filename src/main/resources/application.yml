@@ -7,6 +7,10 @@ spring:
     username: ${DB_USER:root}
     password: ${DB_PASS:root}
 
+    hikari:
+      maximum-pool-size: 3
+      minimum-idle: 1
+
   jpa:
     hibernate:
       ddl-auto: none
