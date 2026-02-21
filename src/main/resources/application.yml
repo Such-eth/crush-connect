@@ -36,6 +36,13 @@ jwt:
   secret: ${JWT_SECRET}
   expiration-hours: 24
 
+brevo:
+  api:
+    key: ${BREVO_API_KEY}
+  sender:
+    email: ${BREVO_SENDER_EMAIL}
+    name: ${BREVO_SENDER_NAME}
+
 
 #spring:
 #  application:

@@ -18,9 +18,9 @@ public class OtpService {
     private final JavaMailSender mailSender;
 
     public OtpService(OtpSessionRepository otpRepository,
-                      JavaMailSender mailSender) {
+                      BrevoEmailService brevoEmailService) {
         this.otpRepository = otpRepository;
-        this.mailSender = mailSender;
+        this.brevoEmailService = brevoEmailService;
     }
 
     public void sendOtp(String email) {
