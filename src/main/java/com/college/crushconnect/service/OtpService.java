@@ -4,8 +4,6 @@ import com.college.crushconnect.entity.OtpSession;
 import com.college.crushconnect.repository.OtpSessionRepository;
 import com.college.crushconnect.util.HashUtil;
 import com.college.crushconnect.util.OtpGenerator;
-import org.springframework.mail.SimpleMailMessage;
-import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 
 import java.time.Instant;
@@ -15,7 +13,7 @@ import java.time.temporal.ChronoUnit;
 public class OtpService {
 
     private final OtpSessionRepository otpRepository;
-    private final JavaMailSender mailSender;
+    private BrevoEmailService brevoEmailService;
 
     public OtpService(OtpSessionRepository otpRepository,
                       BrevoEmailService brevoEmailService) {
@@ -40,15 +38,6 @@ public class OtpService {
     }
 
     private void sendEmail(String to, String otp) {
-        SimpleMailMessage message = new SimpleMailMessage();
-        message.setTo(to);
-        message.setSubject("Your Login OTP");
-        message.setText(
-                "Your OTP is: " + otp +
-                        "\nThis OTP is valid for 5 minutes.\n\n" +
-                        "If you did not request this, please ignore."
-        );
-
-        mailSender.send(message);
+        brevoEmailService.sendOtpEmail(to, otp);
     }
 }
