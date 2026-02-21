@@ -24,6 +24,8 @@ public class BrevoEmailService {
 
     public void sendOtpEmail(String to, String otp) {
 
+        System.out.println("**********************12345*************"+apiKey);
+
         String url = "https://api.brevo.com/v3/smtp/email";
 
         HttpHeaders headers = new HttpHeaders();
