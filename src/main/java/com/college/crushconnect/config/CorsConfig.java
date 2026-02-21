@@ -19,7 +19,7 @@ public class CorsConfig {
         config.setAllowCredentials(true);
 
         config.setAllowedOrigins(
-                List.of("http://localhost:3000")
+                List.of("http://localhost:3000", "https://crush-match-frontend.vercel.app")
         );
 
         config.setAllowedHeaders(
