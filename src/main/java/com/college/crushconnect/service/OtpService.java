@@ -26,7 +26,8 @@ public class OtpService {
         String otp = OtpGenerator.generate();
         String otpHash = HashUtil.sha256(otp);
 
-        OtpSession session = new OtpSession();
+        OtpSession session = otpRepository.findByEmail(email)
+                .orElse(new OtpSession());
         session.setEmail(email);
         session.setOtpHash(otpHash);
         session.setExpiresAt(Instant.now().plus(5, ChronoUnit.MINUTES));

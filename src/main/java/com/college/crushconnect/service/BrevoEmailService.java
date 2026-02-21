@@ -24,8 +24,6 @@ public class BrevoEmailService {
 
     public void sendOtpEmail(String to, String otp) {
 
-        System.out.println("**********************12345*************"+apiKey);
-
         String url = "https://api.brevo.com/v3/smtp/email";
 
         HttpHeaders headers = new HttpHeaders();
@@ -40,7 +38,7 @@ public class BrevoEmailService {
                 "to", List.of(
                         Map.of("email", to)
                 ),
-                "subject", "Your Login OTP",
+                "subject", "Your Login OTP for Crush-Connect",
                 "htmlContent",
                 "<h2>Your OTP is: " + otp + "</h2>" +
                         "<p>This OTP is valid for 5 minutes.</p>" +
