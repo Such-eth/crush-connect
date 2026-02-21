@@ -30,7 +30,6 @@ services:
       MAIL_USER: ksucheth03@gmail.com
       MAIL_PASS: vlgxvuvfjhoowkyc
 
-      BREVO_API_KEY: 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
       BREVO_SENDER_EMAIL: ksucheth03@gmail.com
       BREVO_SENDER_NAME: Sucheth
 
