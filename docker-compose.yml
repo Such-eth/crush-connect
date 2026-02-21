@@ -29,7 +29,6 @@ services:
 
       MAIL_USER: ksucheth03@gmail.com
       MAIL_PASS: vlgxvuvfjhoowkyc
-
       BREVO_SENDER_EMAIL: ksucheth03@gmail.com
       BREVO_SENDER_NAME: Sucheth
 
