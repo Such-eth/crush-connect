@@ -32,7 +32,7 @@ services:
       BREVO_SENDER_EMAIL: ksucheth03@gmail.com
       BREVO_SENDER_NAME: Sucheth
 
-      JWT_SECRET: QnJmKX4H0sM9R+9ZkA2P5rXW8m9nU3Hc0E4T7LJbM2Y=
+
 
 volumes:
   mysql-data:
